@@ -16,11 +16,11 @@ mongoose
   });
 
 const app = express();
-
+const app_url = process.meta.env.APP_URL;
 // to make input as json
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ origin: [process.meta.env.APP_URL], credentials: true }));
+app.use(cors({ origin: [app_url], credentials: true }));
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
