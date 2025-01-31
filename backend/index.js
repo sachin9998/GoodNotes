@@ -21,26 +21,24 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
-const allowedOrigins = [
-  "https://goodnotesbysachin.vercel.app",
-  "https://www.goodnotesbysachin.vercel.app",
-  "https://good-notes-git-main-sachinalam.vercel.app",
-  "https://www.good-notes-git-main-sachinalam.vercel.app",
-  "https://good-notes-bqidar9tt-sachinalam.vercel.app",
-  "https://www.good-notes-bqidar9tt-sachinalam.vercel.app",
-  "http://localhost:5173",
-];
+// const allowedOrigins = [
+//   "https://goodnotesbysachin.vercel.app",
+//   "https://www.goodnotesbysachin.vercel.app",
+//   "https://good-notes-git-main-sachinalam.vercel.app",
+//   "https://www.good-notes-git-main-sachinalam.vercel.app",
+//   "https://good-notes-bqidar9tt-sachinalam.vercel.app",
+//   "https://www.good-notes-bqidar9tt-sachinalam.vercel.app",
+//   "http://localhost:5173",
+// ];
 
 app.use(
   cors({
-    origin: function (origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-    credentials: true, // Allows cookies and authorization headers
+    origin: [
+      "http://localhost:5173",
+      "https://goodnotesbysachin.vercel.app",
+      "https://good-notes-git-main-sachinalam.vercel.app",
+    ],
+    credentials: true, // ✅ Required for cookies
   })
 );
 
