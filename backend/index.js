@@ -20,7 +20,28 @@ const app = express();
 // to make input as json
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
+
+const allowedOrigins = [
+  "https://goodnotesbysachin.vercel.app/",
+  "https://www.goodnotesbysachin.vercel.app/",
+  "https://good-notes-git-main-sachinalam.vercel.app/",
+  "https://www.good-notes-git-main-sachinalam.vercel.app/",
+  "https://good-notes-bqidar9tt-sachinalam.vercel.app/",
+  "https://www.good-notes-bqidar9tt-sachinalam.vercel.app/",
+];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true, // Allows cookies and authorization headers
+  })
+);
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
