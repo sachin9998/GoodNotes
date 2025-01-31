@@ -27,7 +27,8 @@ const allowedOrigins = [
   "https://good-notes-git-main-sachinalam.vercel.app",
   "https://www.good-notes-git-main-sachinalam.vercel.app",
   "https://good-notes-bqidar9tt-sachinalam.vercel.app",
-  "https://www.good-notes-bqidar9tt-sachinalam.vercel.app"
+  "https://www.good-notes-bqidar9tt-sachinalam.vercel.app",
+  "http://localhost:5173",
 ];
 
 app.use(

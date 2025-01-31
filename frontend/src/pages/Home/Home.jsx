@@ -43,6 +43,7 @@ const Home = () => {
   const getAllNotes = async () => {
     try {
       const url = `${import.meta.env.VITE_BASE_URL}/api/note/all`;
+      
       const res = await axios.get(url, {
         withCredentials: true,
       });
