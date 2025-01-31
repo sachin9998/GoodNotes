@@ -41,7 +41,7 @@ const Login = () => {
       dispatch(signInStart());
 
       const url = `${import.meta.env.VITE_BASE_URL}/api/auth/signin`;
-      
+
       const res = await axios.post(
         url,
         { email, password },
@@ -51,7 +51,7 @@ const Login = () => {
       if (res.data.success === false) {
         toast.error(res.data.message);
         console.log(res.data);
-        dispatch(signInFailure(data.message));
+        dispatch(signInFailure(res.data.message));
       }
 
       toast.success(res.data.message);
