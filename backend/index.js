@@ -28,7 +28,7 @@ const allowedOrigins = [
   "https://www.good-notes-git-main-sachinalam.vercel.app",
   "https://good-notes-bqidar9tt-sachinalam.vercel.app",
   "https://www.good-notes-bqidar9tt-sachinalam.vercel.app"
-].split(",");
+];
 
 app.use(
   cors({
